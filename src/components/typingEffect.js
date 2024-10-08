@@ -3,11 +3,9 @@
 import React, { useEffect, useState } from 'react';
 import styles from './typingEffect.module.css'; // Import your CSS module
 
-const TypingEffect = () => {
+const TypingEffect = ({size}) => {
   const tagline = "Innovating Your Crypto Experience.";
-  const colors = ["#FF5733", "#33FF57", "#3357FF", "#F1C40F", "#8E44AD"]; // Add more colors as needed
   const [text, setText] = useState("");
-  const [colorIndex, setColorIndex] = useState(0);
 
   useEffect(() => {
     let currentIndex = 0;
@@ -18,23 +16,16 @@ const TypingEffect = () => {
       } else {
         clearInterval(interval);
       }
-    }, 50); // Typing speed, adjust as needed
+    }, 100); // Typing speed, adjust as needed
 
     return () => clearInterval(interval);
   }, [tagline]);
 
-  useEffect(() => {
-    const colorInterval = setInterval(() => {
-      setColorIndex((prev) => (prev + 1) % colors.length);
-    }, 500); // Color change speed, adjust as needed
-
-    return () => clearInterval(colorInterval);
-  }, [tagline]);
 
   return (
-    <h1 className={styles.typingText} style={{ color: colors[colorIndex] }}>
+    <h1 className={styles.typingText} style={{ color: "white", fontSize: size }}>
       {text}
-      {/* <span className={styles.cursor}>|</span> */}
+      <span className={styles.cursor}>|</span>
     </h1>
   );
 };

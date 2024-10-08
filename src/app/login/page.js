@@ -1,8 +1,8 @@
 // pages/login.js
 import React from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import "./login.css"
-import CryptTrendLogo from '@/components/logo';
 import TypingEffect from '@/components/typingEffect';
 import SocialMediaIcons from '@/components/footerIcons';
 
@@ -13,18 +13,27 @@ export default function LoginPage() {
         <title>Login - Crypto Platform</title>
       </Head>
 
+      <video autoPlay muted loop playsInline className="backgroundVideo">
+        <source src="/video2.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
       {/* Main Flex Container for image and login form */}
       <div className="mainContainer">
         {/* Image Section */}
         <div className="imageContainer">
-          <img src="/loginMan.png" alt="Crypto Visual" className="loginImage" />
+          <Image src="/logo.png" width="600" height="105" />
+          <span style={{paddingLeft:70}}><TypingEffect size={32} /> </span>
         </div>
 
         {/* Form Section */}
         <div className="formSection">
           <div className="container">
-            <CryptTrendLogo />
-            <TypingEffect />
+            <div className="hideLargeScreen">
+              <Image src="/logo.png" width="300" height="52" />
+              <TypingEffect size={24} />
+            </div>
+            
 
             {/* Login Form Section */}
             <div className="formContainer">
