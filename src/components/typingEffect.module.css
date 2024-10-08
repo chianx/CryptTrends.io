@@ -1,0 +1,24 @@
+.typingText {
+    font-size: 1.5rem; /* Adjust as needed */
+    font-weight: bold;
+    margin-top: 0;
+    display: inline-block; /* To make the cursor effect inline */
+    position: relative; /* For positioning the cursor */
+  }
+  
+  .cursor {
+    animation: blink 0.7s step-end infinite; /* Cursor blink effect */
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
