@@ -1,6 +1,7 @@
 
 body {
-  background: #242a2a;
+  /* background: #242a2a; */
+  background: #131313;
   color: #E0E0E0;
   font-family: 'Poppins', sans-serif;
   padding: 0;
@@ -18,4 +19,12 @@ body::before {
   background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* Subtle texture */
   opacity: 0.05; /* Very light texture to add refinement */
   pointer-events: none; /* Ensures the texture doesn't interfere with content */
+}
+
+.gradient-text {
+  background: linear-gradient(to bottom, #33CDD3, #0E8388); /* Gradient from top to bottom */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }

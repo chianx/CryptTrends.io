@@ -3,6 +3,8 @@ import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import "./login.css"
+import { FaRegUserCircle } from "react-icons/fa";
+import { MdOutlineLock } from "react-icons/md";
 import TypingEffect from '@/components/typingEffect';
 import SocialMediaIcons from '@/components/footerIcons';
 
@@ -14,7 +16,7 @@ export default function LoginPage() {
       </Head>
 
       <video autoPlay muted loop playsInline className="backgroundVideo">
-        <source src="/video2.mp4" type="video/mp4" />
+        <source src="/video3.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -22,7 +24,7 @@ export default function LoginPage() {
       <div className="mainContainer">
         {/* Image Section */}
         <div className="imageContainer">
-          <Image src="/logo.png" width="600" height="105" />
+          <img src="/logo.png" className='logo' />
           <span style={{paddingLeft:70}}><TypingEffect size={32} /> </span>
         </div>
 
@@ -33,8 +35,7 @@ export default function LoginPage() {
               <Image src="/logo.png" width="300" height="52" />
               <TypingEffect size={24} />
             </div>
-            
-
+          
             {/* Login Form Section */}
             <div className="formContainer">
               <h2 className="title">Login</h2>
@@ -42,27 +43,34 @@ export default function LoginPage() {
                 {/* Email Field */}
                 <div className="inputGroup">
                   <label htmlFor="email">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="inputField"
-                    placeholder="Enter your email"
-                  />
+                    <div className='inputWithIcon'>
+                      <FaRegUserCircle className='icon' />
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        className="inputField"
+                        placeholder="Enter your email"
+                      />
+                    </div>
                 </div>
 
                 {/* Password Field */}
                 <div className="inputGroup">
                   <label htmlFor="password">Password</label>
-                  <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    required
-                    className="inputField"
-                    placeholder="Enter your password"
-                  />
+                  <div className='inputWithIcon'>
+                  <MdOutlineLock className='icon' />
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      required
+                      className="inputField"
+                      placeholder="Enter your password"
+                    />
+                    <i className="togglePassword fa fa-eye-slash"></i>
+                  </div>
                 </div>
 
                 {/* Submit Button */}
@@ -71,9 +79,25 @@ export default function LoginPage() {
                 </button>
               </form>
 
+              <div className="or-separator">
+                <hr className="line" />
+                <span className="or-text">or</span>
+                <hr className="line" />
+              </div>
+
+              <button className="google-signin-button">
+                <img
+                  src="https://imagepng.org/wp-content/uploads/2019/08/google-icon-1.png"
+                  alt="Google icon"
+                  className="google-icon"
+                />
+                <span className="button-text">Sign in with Google</span>
+              </button>
+
+
               {/* Register Link */}
               <div className="registerLink">
-                <p>Don't have an account? <a href="/register">Register here</a></p>
+                <p>Don't have an account? <a href="/signup">Sign up</a></p>
               </div>
             </div>
 
